@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Event Co. | Mobile bar and bartending, Kansas City</title>
+<meta name="description" content="Mobile bar and bartending for weddings, corporate events and private parties around Kansas City. Check your date and send an inquiry.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B2142; --dusk:#3A4170; --paper:#F3F4F8; --white:#FFFFFF;
+  --coral:#E8553A; --coral-dark:#B9381F; --line:#D9DCE8; --muted:#4A5072;
+  --display:'Bricolage Grotesque','Avenir Next','Helvetica Neue',Arial,sans-serif;
+  --body:'DM Sans','Avenir Next','Helvetica Neue',Arial,sans-serif;
+  --gutter:20px; --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:var(--coral-dark)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-0.025em;font-weight:800}
+.sr{position:absolute;left:-9999px}
+
+/* sample banner (remove on a real client site) */
+.sample{background:var(--ink);color:#fff;font-size:14px;padding:9px 0}
+.sample .wrap{display:flex;gap:10px;align-items:center}
+.sample b{background:var(--coral);color:#fff;font-weight:700;border-radius:4px;padding:1px 8px;font-size:12px;flex:none}
+
+/* header */
+.top{padding:22px 0}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-0.03em;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--coral)}
+.call{font-weight:700;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--coral);padding-bottom:1px;white-space:nowrap}
+
+/* hero */
+.hero{padding:28px 0 56px}
+.hero .wrap{display:grid;gap:36px}
+.hero h1{font-size:clamp(40px,10.5vw,84px);max-width:11ch}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,rgba(232,85,58,.38) 62%)}
+.lede{font-size:19px;color:var(--muted);max-width:34em;margin-top:18px}
+.check{background:var(--white);border:2px solid var(--ink);border-radius:14px;padding:22px;box-shadow:8px 8px 0 var(--ink);align-self:start}
+.check h2{font-size:24px;margin-bottom:4px}
+.check p{color:var(--muted);font-size:15px;margin-bottom:16px}
+label{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
+.opt{font-weight:400;color:var(--muted)}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--white);border:2px solid var(--line);border-radius:10px;padding:12px 14px;min-height:50px}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none;box-shadow:0 0 0 3px rgba(232,85,58,.35)}
+.field{margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-weight:700;font-size:17px;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:10px;padding:13px 22px;min-height:52px;cursor:pointer;text-decoration:none;width:100%}
+.btn:hover{background:var(--dusk);border-color:var(--dusk)}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn.ghost{background:transparent;color:var(--ink)}
+
+/* sections */
+section{padding:56px 0}
+.band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+h2.big{font-size:clamp(30px,6.5vw,48px);max-width:16ch}
+.sub{color:var(--muted);max-width:34em;margin-top:12px}
+
+.rows{margin-top:28px;border-top:2px solid var(--ink)}
+.row{display:grid;gap:6px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row h3{font-size:24px}
+.row p{color:var(--muted);max-width:36em}
+
+.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.ph{aspect-ratio:4/5;border-radius:10px;display:flex;align-items:flex-end;padding:12px;font-size:13px;color:#fff;font-weight:500}
+.ph:nth-child(1){background:linear-gradient(160deg,#3A4170,#1B2142)}
+.ph:nth-child(2){background:linear-gradient(160deg,#E8553A,#8d2a16)}
+.ph:nth-child(3){background:linear-gradient(160deg,#566095,#2b3157)}
+.ph:nth-child(4){background:linear-gradient(160deg,#c9442b,#3A4170)}
+
+.steps{list-style:none;margin-top:28px;display:grid;gap:22px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:22px;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center}
+.steps h3{font-size:21px;margin-bottom:2px}
+.steps p{color:var(--muted)}
+
+details{border-bottom:1px solid var(--line);padding:16px 0}
+details:first-of-type{border-top:2px solid var(--ink);margin-top:28px}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-family:var(--display);font-size:24px;line-height:1;color:var(--coral-dark)}
+details[open] summary::after{content:'\2013'}
+details p{color:var(--muted);margin-top:10px;max-width:36em}
+
+/* full form */
+.formwrap{display:grid;gap:28px}
+.fcard{background:var(--white);border:2px solid var(--ink);border-radius:14px;padding:22px}
+.two{display:grid;gap:0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.note{font-size:14px;color:var(--muted);margin-top:12px}
+.err{color:var(--coral-dark);font-weight:700;margin-top:12px}
+.done{padding:6px 0}
+.done h3{font-size:28px;margin-bottom:8px}
+.done dl{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.done dt{font-weight:700}
+.demo{margin-top:16px;font-size:13px;background:var(--paper);border-radius:8px;padding:8px 12px;color:var(--muted)}
+
+footer{padding:36px 0 48px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
+.pb{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--muted)}
+.pb svg,.pb img{width:20px;height:20px}
+.pb b{font-family:var(--display);color:var(--ink);font-weight:800;letter-spacing:-0.03em}
+
+@media (min-width:760px){
+  :root{--gutter:32px}
+  .hero{padding:48px 0 88px}
+  .hero .wrap{grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+  .check{padding:28px}
+  .btn{width:auto}
+  .check .btn{width:100%}
+  .photos{grid-template-columns:repeat(4,1fr)}
+  .row{grid-template-columns:240px 1fr;gap:28px;align-items:baseline}
+  .formwrap{grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+  .two{grid-template-columns:1fr 1fr;gap:16px}
+  .fcard{padding:30px}
+  section{padding:80px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- SAMPLE BANNER: delete this block on a real client site -->
+<div class="sample"><div class="wrap"><b>Sample</b><span>Demo site made to show Catchall. Sample Event Co. is a made-up business.</span></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Sample <span>Event</span> Co.</a>
+    <a class="call" href="tel:+18165550123">(816) 555-0123</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>A real bar at your event.</h1>
+      <p class="lede">Mobile bartending for weddings, company parties and backyard celebrations around Kansas City. Every package includes a full zero-proof menu.</p>
+    </div>
+    <form class="check" id="datecheck" novalidate>
+      <h2>Is your date open?</h2>
+      <p>Tell us when. We reply within one business day.</p>
+      <div class="field">
+        <label for="d-date">Event date</label>
+        <input type="date" id="d-date" required>
+      </div>
+      <div class="field">
+        <label for="d-type">What kind of event</label>
+        <select id="d-type">
+          <option>Wedding</option>
+          <option>Corporate event</option>
+          <option>Private party</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <button class="btn" type="submit">Check my date</button>
+    </form>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <h2 class="big">What we set up</h2>
+    <div class="rows">
+      <div class="row"><h3>Weddings</h3><p>Full bar service from cocktail hour through the last dance, with a signature drink designed around your menu.</p></div>
+      <div class="row"><h3>Company events</h3><p>Holiday parties, client dinners and team celebrations. Licensed, insured and easy to invoice.</p></div>
+      <div class="row"><h3>Private parties</h3><p>Birthdays, graduations and backyard get-togethers, sized to your guest list.</p></div>
+      <div class="row"><h3>Zero-proof menu</h3><p>Craft mocktails on every package, so everyone at the party has something good in their hand.</p></div>
+    </div>
+    <div class="photos" aria-hidden="true">
+      <div class="ph">Your photo here</div><div class="ph">Your photo here</div><div class="ph">Your photo here</div><div class="ph">Your photo here</div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2 class="big">How booking works</h2>
+    <ol class="steps">
+      <li><div><h3>Send your date</h3><p>Fill out the short form below. It takes about two minutes.</p></div></li>
+      <li><div><h3>Get a quote</h3><p>We reply within one business day with a price and open questions.</p></div></li>
+      <li><div><h3>Hold the date</h3><p>A small deposit locks it in. We handle the rest.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap">
+    <h2 class="big">Questions people ask</h2>
+    <details><summary>How far ahead should I book?</summary><p>Weddings book 6 to 12 months out. Smaller events can often be done in a few weeks, so send your date and ask.</p></details>
+    <details><summary>Do you travel outside Kansas City?</summary><p>Yes. Anything within about an hour is included. Farther than that adds a travel fee, which we put in your quote.</p></details>
+    <details><summary>What does a quote include?</summary><p>Bartender hours, setup and breakdown, the bar itself, and a drink menu. Glassware and extra staff are listed as add-ons.</p></details>
+    <details><summary>How soon will I hear back?</summary><p>You get a confirmation email as soon as you send the form, and a personal reply within one business day.</p></details>
+  </div>
+</section>
+
+<section id="request">
+  <div class="wrap formwrap">
+    <div>
+      <h2 class="big">Tell us about your event</h2>
+      <p class="sub">The more you share, the faster we can send a real quote. Anything you leave blank we will ask about later.</p>
+    </div>
+    <div class="fcard" id="fcard">
+      <form id="inquiry" novalidate>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="two">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="phone">Phone <span class="opt">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="two">
+          <div class="field"><label for="date">Event date</label><input id="date" name="event_date" type="date" required></div>
+          <div class="field"><label for="type">Event type</label>
+            <select id="type" name="event_type"><option>Wedding</option><option>Corporate event</option><option>Private party</option><option>Something else</option></select></div>
+        </div>
+        <div class="field"><label for="where">Venue or city</label><input id="where" name="location" placeholder="Venue name or city"></div>
+        <div class="two">
+          <div class="field"><label for="guests">Guest count</label>
+            <select id="guests" name="guests"><option value="">Not sure yet</option><option>Under 50</option><option>50 to 100</option><option>100 to 200</option><option>200 or more</option></select></div>
+          <div class="field"><label for="budget">Budget <span class="opt">(optional)</span></label>
+            <select id="budget" name="budget"><option value="">Prefer not to say</option><option>Under $500</option><option>$500 to $1,000</option><option>$1,000 to $2,500</option><option>$2,500 or more</option></select></div>
+        </div>
+        <div class="field"><label for="source">How did you find us</label>
+          <select id="source" name="source"><option value="">Choose one</option><option>Instagram</option><option>Facebook</option><option>Google</option><option>A friend or planner</option><option>Saw us at an event</option><option>Other</option></select></div>
+        <div class="field"><label for="msg">Anything else we should know <span class="opt">(optional)</span></label><textarea id="msg" name="message"></textarea></div>
+        <button class="btn" id="send" type="submit">Send my inquiry</button>
+        <p class="err" id="err" role="alert" hidden></p>
+        <p class="note">We use your details only to answer this inquiry.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Sample Event Co.</span>
+    <!-- when Dose Studio has a web page, wrap this in <a href="..."> -->
+    <span class="pb">
+      <img src="dose-mark.svg" alt="" width="20" height="20">
+      <span>powered by <b>dose studio</b></span>
+    </span>
+  </div>
+</footer>
+
+<script>
+/* ---- CONFIG: the only part to change per client (besides the text above) ---- */
+var CONFIG = {
+  formUrl: "",                       // paste the Apps Script web app URL here. Empty = demo mode.
+  businessName: "Sample Event Co.",
+  fallbackContact: "(816) 555-0123"  // shown if sending fails
+};
+/* ---------------------------------------------------------------------------- */
+
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  $('yr').textContent = new Date().getFullYear();
+
+  // dates can't be in the past
+  var t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
+  var today = t.toISOString().slice(0,10);
+  $('d-date').min = today; $('date').min = today;
+
+  // hero date check carries over into the full form
+  $('datecheck').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!$('d-date').value){ $('d-date').focus(); return; }
+    $('date').value = $('d-date').value;
+    $('type').value = $('d-type').value;
+    $('inquiry').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+    setTimeout(function(){ $('name').focus({preventScroll:true}); }, 450);
+  });
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function showErr(msg){ var e = $('err'); e.textContent = msg; e.hidden = false; }
+  function prettyDate(v){ try{ var p = v.split('-'); return new Date(p[0], p[1]-1, p[2]).toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'}); }catch(_){ return v; } }
+
+  $('inquiry').addEventListener('submit', function(e){
+    e.preventDefault();
+    $('err').hidden = true;
+    var f = e.target, data = {};
+    new FormData(f).forEach(function(v,k){ data[k] = v; });
+
+    if(!data.name.trim()){ showErr('Add your name so we know who to reply to.'); $('name').focus(); return; }
+    if(!/^\S+@\S+\.\S+$/.test(data.email)){ showErr('Check your email address. It should look like name@example.com.'); $('email').focus(); return; }
+    if(!data.event_date){ showErr('Pick your event date.'); $('date').focus(); return; }
+    if(data.website){ return; } // honeypot: bots fill this in, people never see it
+
+    data.page = location.href;
+    data.sent_at = new Date().toISOString();
+    var btn = $('send'); btn.disabled = true; btn.textContent = 'Sending...';
+
+    function success(demo){
+      var h = '<div class="done"><h3>Got it, ' + esc(data.name.split(' ')[0]) + '.</h3>' +
+        '<p>We received your inquiry' + (data.email ? ' and sent a confirmation to ' + esc(data.email) : '') + '. Expect a personal reply within one business day.</p>' +
+        '<dl><dt>Date</dt><dd>' + esc(prettyDate(data.event_date)) + '</dd>' +
+        '<dt>Event</dt><dd>' + esc(data.event_type) + '</dd>' +
+        (data.location ? '<dt>Where</dt><dd>' + esc(data.location) + '</dd>' : '') + '</dl>' +
+        (demo ? '<p class="demo">Demo mode: nothing was sent. On a real site this lands in the owner\'s tracker and triggers an email.</p>' : '') +
+        '</div>';
+      $('fcard').innerHTML = h;
+      $('fcard').scrollIntoView({block:'center', behavior:'smooth'});
+    }
+
+    if(!CONFIG.formUrl){
+      try{ var k='catchall_demo', a=JSON.parse(localStorage.getItem(k)||'[]'); a.push(data); localStorage.setItem(k, JSON.stringify(a)); }catch(_){}
+      setTimeout(function(){ success(true); }, 500);
+      return;
+    }
+    fetch(CONFIG.formUrl, { method:'POST', mode:'no-cors', body:new URLSearchParams(data) })
+      .then(function(){ success(false); })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'Send my inquiry';
+        showErr('That did not send. Check your connection and try again, or call ' + CONFIG.fallbackContact + '.');
+      });
+  });
+})();
+</script>
+</body>
+</html>
